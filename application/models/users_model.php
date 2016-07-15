@@ -8,12 +8,12 @@ class Users_model extends CI_Model {
 		parent::__construct();
 	}
 
-	public function add($post)
+	public function add($_post)
 	{
-		if (empaty($post))
+		if (empty($_post))
 			return FALSE;
 
-		return $this->db->insert('users',$post);
+		return $this->db->insert('usuarios',$_post);
 		
 	}
 
@@ -23,12 +23,12 @@ class Users_model extends CI_Model {
 			return FALSE;
 		 
 
-		if (empaty($post))
+		if (empty($_post))
 			return FALSE;
 
 		$this->db->where('id',$_id);
 
-		return $this->db->update('users',$_post);
+		return $this->db->update('usuarios',$_post);
 		
 	}
 
@@ -38,18 +38,18 @@ class Users_model extends CI_Model {
 			return FALSE;
 		 
 
-		if (empaty($post))
+		if (empty($post))
 			return FALSE;
 
 		$this->db->where('id',$_id);
 
-		return $this->db->update('users',$post);
+		return $this->db->update('usuarios',$_post);
 		
 	}
 
-	public function get($sele='*')
+	public function get($_select='*')
 	{
-		$this->db->select($_select)
+		$this->db->select($_select);
 		$this->db->where(
 					array(
 
@@ -58,34 +58,34 @@ class Users_model extends CI_Model {
 						
 					);
 
-		return $this->db->get('users')->result();
+		return $this->db->get('usuarios')->result();
 	}
 
-	public function get_by_id($_id)
+	public function get_by_id($_id, $_select = '*')
 	{
 
 	  if (!is_numeric($_id))
 			return FALSE;
 
-	   $this->db->select($_select)
+	    $this->db->select($_select);
 		$this->db->where(
 					array(
-
-						'status !='=>99
+						'status !='=>99,
+						'id' =>$_id
 					)
 						
 					);
 
-		return $this->db->get('users')->row();	
+		return $this->db->get('usuarios')->row();	
 	}
 
-	public function get_by_dni($_dni)
+	public function get_by_dni($_dni, $_select = '*')
 	{
 
 	   if (!empty($_dni))
 			return FALSE;
 
-	   $this->db->select($_select)
+	   $this->db->select($_select);
 		$this->db->where(
 					array(
 
@@ -95,7 +95,7 @@ class Users_model extends CI_Model {
 						
 					);
 
-		return $this->db->get('users')->row();		
+		return $this->db->get('usuarios')->row();		
 	}
 
 

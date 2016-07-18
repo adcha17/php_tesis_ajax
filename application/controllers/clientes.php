@@ -52,7 +52,7 @@ class Clientes extends CI_Controller {
     {
         $_data = $this->validate_post();
         
-        $_result = $this->clientes_model->add($_data['data']);
+        $_result = $this->clientes_model->add($_data);
         
         die();
 
@@ -68,9 +68,11 @@ class Clientes extends CI_Controller {
     */
     public function action_update()
     {
-        $_data = $this->validate_post(TRUE);
+        $_cliente_id = $this->input->post('cliente_id',TRUE);
+
+        $_data = $this->validate_post($_cliente_id);
         
-        $_result = $this->clientes_model->update($_data['data'], $_data['cliente_id']);
+        $_result = $this->clientes_model->update($_data,$_cliente_id);
         
         if ($_result)
             _build_json(TRUE,'cliente actualizado');
@@ -78,16 +80,15 @@ class Clientes extends CI_Controller {
         _build_json(FALSE,'Error al actualizar cliente');
     }
 
-    public function validate_post($id=FALSE)
+    public function validate_post($_id=FALSE)
     {
          _is_post(); 
     	 _is_ajax_request();
-         $_cliente_id = FALSE;
+     
 
-         if ($id) {
-             $_cliente_id = $this->input->post('cliente_id',TRUE);
+         if ($_id) {
 
-            $_cliente_info = $this->clientes_model->get_by_id($_cliente_id);
+            $_cliente_info = $this->clientes_model->get_by_id($_id);
 
             if (!$_cliente_info) 
                 _build_json(FALSE,'cliente no registrado en la DB');
@@ -107,13 +108,29 @@ class Clientes extends CI_Controller {
         $_dni = $this->input->post('dni',TRUE);
         $_data['dni'] = _validate_empty($_dni,'ingresa tu dni');
 
+        $_cliente_info = $this->clientes_model->get_by_dni($_dni);
+
+        if ($_id) {
+
+            if($_cliente_info && (int) $_id !== (int) $_cliente_info->id)
+              _build_json(FALSE,'Este dni ya esta registrado en la BD');
+
+        }else{
+            if($_cliente_info && $_cliente_info->id != $id)
+              _build_json(FALSE,'Este dni ya esta registrado en la BD');
+
+        }
+
+
+        
+
         $_address = $this->input->post('address',TRUE);
         $_data['address'] = _validate_empty($_address,'ingresa tu dirección');
 
         $_district_id = $this->input->post('district_id',TRUE);
         $_data['district_id'] = _validate_empty($_district_id,'selecciona tu distrito');
 
-    	return array('data'=>$_data, 'cliente_id'=>$_cliente_id);
+    	return $_data;
 
     }
     /*

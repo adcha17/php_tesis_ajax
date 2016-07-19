@@ -18,7 +18,7 @@
 
 		   		<div class="form-group">
 		   			<label for="">Nombre</label>
-		   			<input type="hidden" value="<?php echo $item->id ?>" class="form-control" id="cliente_id" name="cliente_id">
+		   			<input type="hidden" value="<?php echo $item->id ?>" class="form-control" id="categoria_id" name="categoria_id">
 		   			<input type="text" value="<?php echo $item->name ?>" class="form-control" id="name" name="name" placeholder="Nombre">
 		   		</div>
 		   		

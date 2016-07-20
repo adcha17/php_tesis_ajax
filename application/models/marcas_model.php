@@ -79,25 +79,7 @@ class Marcas_model extends CI_Model {
 		return $this->db->get('marcas')->row();	
 	}
 
-	public function get_by_dni($_dni, $_select = '*')
-	{
-
-	   if (!empty($_dni))
-			return FALSE;
-
-	   $this->db->select($_select);
-		$this->db->where(
-					array(
-
-						'status !='=>99,
-						'dni'=>$_dni
-					)
-						
-					);
-
-		return $this->db->get('marcas')->row();		
-	}
-
+	
 
 
 }

@@ -31,9 +31,6 @@
 			   			<th>#</th>
 			   			<th>Nombre</th>
 			   			<th>Descripcion</th>
-			   			<th>Fecha_registro</th>
-			   			<th>Fecha_modificacion</th>
-			   			<th>Usuario_id</th>
 			   			<th></th>
 			   			
 			   		</tr>
@@ -48,11 +45,9 @@
 			   		 ?>
 			   		<tr>
 			   			<td><?php echo $items[$x]->id ?></td>
-			   			<td><?php echo $items[$x]->nombre_marca?></td>
+			   			<td><?php echo $items[$x]->name?></td>
 			   			<td><?php echo $items[$x]->descripcion?></td>
-			   			<td><?php echo $items[$x]->fecha_registro?></td>
-			   			<td><?php echo $items[$x]->fecha_modificacion?></td>
-			   			<td><?php echo $items[$x]->usuario_id?></td>
+		
 
 
 			   			<td>

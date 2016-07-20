@@ -63,7 +63,7 @@ class Clientes extends CI_Controller {
         
         $_result = $this->clientes_model->add($_data);
         
-        die();
+        
 
         if ($_result)
             _build_json(TRUE,'cliente registrado');

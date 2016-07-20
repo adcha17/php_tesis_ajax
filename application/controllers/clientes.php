@@ -8,17 +8,16 @@ class Clientes extends CI_Controller {
 		$this->controller = strtolower(get_class($this));
 		$this->data['controller'] = $this->controller;
 
+
 	}
 	/*
  	  FUNCION CARGAR EL FORMULARIO ADD
  	*/
 	public function load_add()
     {
-    	//_beta();
-    	//_is_ajax_request();
-    	
+    	$this->data['view'] = $this->controller.'/load_add';
 
-    	$this->load->view($this->controller.'/load_add',$this->data);
+        $this->load->view('home/load_index',$this->data);
     }
 
     /*
@@ -33,17 +32,27 @@ class Clientes extends CI_Controller {
         
         $this->data['item'] = $_cliente_info;
 
-    	$this->load->view($this->controller.'/load_update',$this->data);
+    	$this->data['view'] = $this->controller.'/load_update';
+
+        $this->load->view('home/load_index',$this->data);
     }
 
     /*
       FUNCION CARGAR LIST
     */
-    public function load_list()
+   
+
+     public function load_list()
     {
-      $this->data['items'] = $this->clientes_model->get();
-      $this->load->view($this->controller.'/load_list',$this->data);
+
+        $this->data['items'] = $this->clientes_model->get();
+
+       $this->data['view'] = $this->controller.'/load_list';
+
+        $this->load->view('home/load_index',$this->data);
     }
+
+
 
 	/*
 	   FUNCION: AGREGAR REGISTRO A LA BASE DE DATO

@@ -66,7 +66,7 @@ if ($('table').length > 0) {
 	var _this = $(this);
 	var _url = _this.attr('href');
 
-		bootbox.confirm("¿Deseas eliminar este cliente?", function(result) {
+		bootbox.confirm("¿Deseas eliminar este usuario?", function(result) {
 		  if (Boolean(result)) {
 		  	$.ajax({
 				url: _url,

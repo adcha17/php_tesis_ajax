@@ -14,7 +14,7 @@
 	<div class="container">
 		<div class="row">
 				<div class="col-md-12">
-					<h4>LISTADO DE Usuarios</h4>
+					<h4>LISTADO DE USUARIOS</h4>
 				</div>
 				<div class="pull-right">
 					<a href="<?php echo base_url($controller.'/load_add')?>" class="btn btn-info btn-sm">
@@ -32,6 +32,7 @@
 			   			<th>Nombre de Usuario</th>
 			   			<th>Password</th>
 			   			<th>Tipo de Usuarios</th>
+			   			<th>Empeado_id</th>
 			   			<th></th>
 			   			
 			   		</tr>
@@ -49,6 +50,7 @@
 			   			<td><?php echo $items[$x]->nombre_usuario ?></td>
 			   			<td><?php echo $items[$x]->password ?></td>
 			   			<td><?php echo $items[$x]->tipo_usuario ?></td>
+			   			<td><?php echo $items[$x]->empleado_id ?></td>
 			   			<td>
 			   				<a href="<?php echo base_url($controller.'/load_update/'.$items[$x]->id)?>" class="btn btn-success btn-sm">
 			   					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>

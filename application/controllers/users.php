@@ -17,8 +17,11 @@ class Users extends CI_Controller {
         //_beta();
         //_is_ajax_request();
         
-
+       $this->data['empleados'] = $this->users_model->get_empleados();
+        
         $this->load->view($this->controller.'/load_add',$this->data);
+        //vdebug($this->data['items']);
+        //die("sa");
     }
 
     /*
@@ -26,10 +29,11 @@ class Users extends CI_Controller {
     */
     public function load_update($id=FALSE)
     {
+       $this->data['empleados'] = $this->users_model->get_empleados();
         $_cliente_info = $this->users_model->get_by_id($id);
-
+        
         if (!$_cliente_info) 
-            _build_json(FALSE,'cliente no registrado en la DB');
+            _build_json(FALSE,'usuario no registrado en la DB');
         
         $this->data['item'] = $_cliente_info;
 
@@ -54,12 +58,12 @@ class Users extends CI_Controller {
         
         $_result = $this->users_model->add($_data['data']);
         
-        die();
+        
 
         if ($_result)
-            _build_json(TRUE,'cliente registrado');
+            _build_json(TRUE,'usuario registrado');
         
-        _build_json(FALSE,'Error al registrar cliente');
+        _build_json(FALSE,'Error al registrar usuario');
         
     }
 
@@ -73,9 +77,9 @@ class Users extends CI_Controller {
         $_result = $this->users_model->update($_data['data'], $_data['cliente_id']);
         
         if ($_result)
-            _build_json(TRUE,'cliente actualizado');
+            _build_json(TRUE,'usuario actualizado');
         
-        _build_json(FALSE,'Error al actualizar cliente');
+        _build_json(FALSE,'Error al actualizar usuario');
     }
 
     public function validate_post($id=FALSE)
@@ -90,28 +94,21 @@ class Users extends CI_Controller {
             $_cliente_info = $this->users_model->get_by_id($_cliente_id);
 
             if (!$_cliente_info) 
-                _build_json(FALSE,'cliente no registrado en la DB');
+                _build_json(FALSE,'usuario no registrado en la DB');
          }
 
         
+        $_last_name = $this->input->post('empleado_id',TRUE);
+        $_data['empleado_id'] = _validate_empty($_last_name,'Seleccione empleados');
 
-        $_name = $this->input->post('name',TRUE);
-        $_data['name'] = _validate_empty($_name,'ingresa tu nombre');
+        $_last_name = $this->input->post('tipo_usuario',TRUE);
+        $_data['tipo_usuario'] = _validate_empty($_last_name,'Seleccione tipo de Usuario');
 
-        $_last_name = $this->input->post('last_name',TRUE);
-        $_data['last_name'] = _validate_empty($_last_name,'ingresa tu apellido');
+        $_sex = $this->input->post('nombre_usuario',TRUE);
+        $_data['nombre_usuario'] = _validate_empty($_sex,'Ingrese nombre de usuario');
 
-        $_sex = $this->input->post('sex',TRUE);
-        $_data['sex'] = _validate_empty($_sex,'selecciona tu sexo');
-
-        $_dni = $this->input->post('dni',TRUE);
-        $_data['dni'] = _validate_empty($_dni,'ingresa tu dni');
-
-        $_address = $this->input->post('address',TRUE);
-        $_data['address'] = _validate_empty($_address,'ingresa tu dirección');
-
-        $_district_id = $this->input->post('district_id',TRUE);
-        $_data['district_id'] = _validate_empty($_district_id,'selecciona tu distrito');
+        $_dni = $this->input->post('password',TRUE);
+        $_data['password'] = _validate_empty($_dni,'Ingrese una Contraseña');
 
         return array('data'=>$_data, 'cliente_id'=>$_cliente_id);
 
@@ -124,16 +121,16 @@ class Users extends CI_Controller {
         $_cliente_info = $this->users_model->get_by_id($id);
 
         if (!$_cliente_info) 
-            _build_json(FALSE,'cliente no registrado en la DB');
+            _build_json(FALSE,'usuario no registrado en la DB');
 
         $_data = array('status'=> 99);
 
         $_result = $this->users_model->update($_data, $_cliente_info->id);
         
         if ($_result)
-            _build_json(TRUE,'cliente actualizado');
+            _build_json(TRUE,'usuario actualizado');
         
-        _build_json(FALSE,'Error al actualizar cliente');
+        _build_json(FALSE,'Error al actualizar usuario');
     }
  
     

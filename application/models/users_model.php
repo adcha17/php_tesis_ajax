@@ -47,6 +47,14 @@ class Users_model extends CI_Model {
 		
 	}
 
+	public function get_empleados()
+	{
+		
+
+		return $this->db->select('*')->get('empleados')->result();
+	}
+
+
 	public function get($_select='*')
 	{
 		$this->db->select($_select);
@@ -59,7 +67,10 @@ class Users_model extends CI_Model {
 					);
 
 		return $this->db->get('usuarios')->result();
+		
+
 	}
+
 
 	public function get_by_id($_id, $_select = '*')
 	{

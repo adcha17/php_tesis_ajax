@@ -25,13 +25,15 @@
 		   			<label for="">Apellido</label>
 		   			<input type="text" value="<?php echo $item->last_name ?>" class="form-control" id="last_name" name="last_name" placeholder="Apellidos">
 		   		</div>
+		   		
 		   		<div class="form-group">
 		   			<label for="">Sexo</label>
 		   			<select name="sex" id="sex" class="form-control">
-		   				<option value="">--SELECCIONE--</option>
-		   				<option value="M" <?php echo ($item->sex=='M')?'selected':'' ?>>MASCULINO</option>
-		   				<option value="F" <?php echo ($item->sex=='F')?'selected':'' ?>>FEMENINO</option>
-		   			</select>
+		   			
+<option value="">--SELECCIONE--</option>
+<option value="M" <?php echo ($item->sex=='M')?'selected':'' ?>>MASCULINO</option>
+<option value="F" <?php echo ($item->sex=='F')?'selected':'' ?>>FEMENINO</option>
+</select>
 		   	    </div>
 		   	    <div class="form-group">
 		   			<label for="">Dni</label>

@@ -8,17 +8,16 @@ class Clientes extends CI_Controller {
 		$this->controller = strtolower(get_class($this));
 		$this->data['controller'] = $this->controller;
 
+
 	}
 	/*
  	  FUNCION CARGAR EL FORMULARIO ADD
  	*/
 	public function load_add()
     {
-    	//_beta();
-    	//_is_ajax_request();
-    	
+    	$this->data['view'] = $this->controller.'/load_add';
 
-    	$this->load->view($this->controller.'/load_add',$this->data);
+        $this->load->view('home/load_index',$this->data);
     }
 
     /*
@@ -33,17 +32,27 @@ class Clientes extends CI_Controller {
         
         $this->data['item'] = $_cliente_info;
 
-    	$this->load->view($this->controller.'/load_update',$this->data);
+    	$this->data['view'] = $this->controller.'/load_update';
+
+        $this->load->view('home/load_index',$this->data);
     }
 
     /*
       FUNCION CARGAR LIST
     */
-    public function load_list()
+   
+
+     public function load_list()
     {
-      $this->data['items'] = $this->clientes_model->get();
-      $this->load->view($this->controller.'/load_list',$this->data);
+
+        $this->data['items'] = $this->clientes_model->get();
+
+       $this->data['view'] = $this->controller.'/load_list';
+
+        $this->load->view('home/load_index',$this->data);
     }
+
+
 
 	/*
 	   FUNCION: AGREGAR REGISTRO A LA BASE DE DATO
@@ -52,9 +61,11 @@ class Clientes extends CI_Controller {
     {
         $_data = $this->validate_post();
         
-        $_result = $this->clientes_model->add($_data['data']);
+        $_result = $this->clientes_model->add($_data);
         
-    
+        
+
+
 
         if ($_result)
             _build_json(TRUE,'cliente registrado');
@@ -68,9 +79,11 @@ class Clientes extends CI_Controller {
     */
     public function action_update()
     {
-        $_data = $this->validate_post(TRUE);
+        $_cliente_id = $this->input->post('cliente_id',TRUE);
+
+        $_data = $this->validate_post($_cliente_id);
         
-        $_result = $this->clientes_model->update($_data['data'], $_data['cliente_id']);
+        $_result = $this->clientes_model->update($_data,$_cliente_id);
         
         if ($_result)
             _build_json(TRUE,'cliente actualizado');
@@ -78,16 +91,15 @@ class Clientes extends CI_Controller {
         _build_json(FALSE,'Error al actualizar cliente');
     }
 
-    public function validate_post($id=FALSE)
+    public function validate_post($_id=FALSE)
     {
          _is_post(); 
     	 _is_ajax_request();
-         $_cliente_id = FALSE;
+     
 
-         if ($id) {
-             $_cliente_id = $this->input->post('cliente_id',TRUE);
+         if ($_id) {
 
-            $_cliente_info = $this->clientes_model->get_by_id($_cliente_id);
+            $_cliente_info = $this->clientes_model->get_by_id($_id);
 
             if (!$_cliente_info) 
                 _build_json(FALSE,'cliente no registrado en la DB');
@@ -107,13 +119,29 @@ class Clientes extends CI_Controller {
         $_dni = $this->input->post('dni',TRUE);
         $_data['dni'] = _validate_empty($_dni,'ingresa tu dni');
 
+        $_cliente_info = $this->clientes_model->get_by_dni($_dni);
+
+        if ($_id) {
+
+            if($_cliente_info && (int) $_id !== (int) $_cliente_info->id)
+              _build_json(FALSE,'Este dni ya esta registrado en la BD');
+
+        }else{
+            if($_cliente_info && $_cliente_info->id != $id)
+              _build_json(FALSE,'Este dni ya esta registrado en la BD');
+
+        }
+
+
+        
+
         $_address = $this->input->post('address',TRUE);
         $_data['address'] = _validate_empty($_address,'ingresa tu dirección');
 
         $_district_id = $this->input->post('district_id',TRUE);
         $_data['district_id'] = _validate_empty($_district_id,'selecciona tu distrito');
 
-    	return array('data'=>$_data, 'cliente_id'=>$_cliente_id);
+    	return $_data;
 
     }
     /*

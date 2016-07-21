@@ -46,6 +46,9 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
        <!-- JQuery v1.9.1 -->
+
+  <link rel="stylesheet" href="<?php echo base_url('public/css/jquery.dataTables.min.css')?>">
+
   <script src="<?=base_url('public')?>/assets/js/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
   <script>var URL ="<?=base_url()?>"</script>
 </head>
@@ -115,7 +118,11 @@
                     <li class="has-submenu active"><a href="#"><i class="fa fa-file-text-o"></i> <span class="nav-label">MANTENIMIENTOS</span></a>
                       <ul class="list-unstyled">
                           <li class="active"><a href="<?=base_url('clientes/load_list')?>">Clientes</a></li>
+<<<<<<< HEAD
                            <li class="active"><a href="<?=base_url('users/load_list')?>">Usuarios</a></li>
+=======
+                           <li class="active"><a href="<?=base_url('categorias/load_list')?>">Categorias</a></li>
+>>>>>>> d068621f70af82fbc7ca1e1153ce183c0b9d2ceb
                             <li><a href="forms-validation.html">Form Validation</a></li>
                             <li><a href="wysihtml.html">Wysihtml</a></li>
                             <li><a href="file-upload.html">File Upload</a></li>

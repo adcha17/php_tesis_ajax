@@ -14,7 +14,7 @@
 		<div class="wrapper">
 		<div class="col-md-12">
 		   <form action="<?php echo base_url($controller.'/action_update')?>" method="POST" role="form">
-		   		<legend>Datos del Categoria | <?php echo $controller?></legend>
+		   		<legend>Datos de Categoria | <?php echo $controller?></legend>
 
 		   		<div class="form-group">
 		   			<label for="">Nombre</label>

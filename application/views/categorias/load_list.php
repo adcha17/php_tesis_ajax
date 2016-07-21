@@ -68,7 +68,11 @@
         </div>
     </div>
 
-<script src="<?php echo base_url('public/js/master/'.$controller.'.js') ?>"></script>
+    <script src="<?php echo base_url('public/js/jquery.min.js')?>"></script>
+	<script src="<?php echo base_url('public/js/bootstrap.js')?>"></script>
+	<script src="<?php echo base_url('public/js/bootbox.js')?>"></script>
+	<script src="<?php echo base_url('public/js/jquery.dataTables.min.js') ?>"></script>
+    <script src="<?php echo base_url('public/js/master/'.$controller.'.js') ?>"></script>
 
 
 

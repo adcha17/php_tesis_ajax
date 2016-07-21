@@ -14,14 +14,13 @@ class Users extends CI_Controller {
     */
     public function load_add()
     {
-        //_beta();
-        //_is_ajax_request();
+       
         
        $this->data['empleados'] = $this->users_model->get_empleados();
         
-        $this->load->view($this->controller.'/load_add',$this->data);
-        //vdebug($this->data['items']);
-        //die("sa");
+        
+        $this->data ['view'] = $this->controller.'/load_add';
+      $this->load->view('home/load_index',$this->data);
     }
 
     /*
@@ -30,14 +29,17 @@ class Users extends CI_Controller {
     public function load_update($id=FALSE)
     {
        $this->data['empleados'] = $this->users_model->get_empleados();
+
         $_cliente_info = $this->users_model->get_by_id($id);
         
         if (!$_cliente_info) 
             _build_json(FALSE,'usuario no registrado en la DB');
         
         $this->data['item'] = $_cliente_info;
+        $this->data['view'] = $this->controller.'/load_update';
 
-        $this->load->view($this->controller.'/load_update',$this->data);
+        
+         $this->load->view('home/load_index',$this->data);
     }
 
     /*
@@ -45,8 +47,12 @@ class Users extends CI_Controller {
     */
     public function load_list()
     {
+
+
       $this->data['items'] = $this->users_model->get();
-      $this->load->view($this->controller.'/load_list',$this->data);
+
+      $this->data ['view'] = $this->controller.'/load_list';
+      $this->load->view('home/load_index',$this->data);
     }
 
     /*

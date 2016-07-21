@@ -112,9 +112,10 @@
                             <li><a href="panels.html">Panels</a></li>
                         </ul>
                     </li>
-                    <li class="has-submenu active"><a href="#"><i class="fa fa-file-text-o"></i> <span class="nav-label">Forms</span></a>
+                    <li class="has-submenu active"><a href="#"><i class="fa fa-file-text-o"></i> <span class="nav-label">MANTENIMIENTOS</span></a>
                       <ul class="list-unstyled">
                           <li class="active"><a href="<?=base_url('clientes/load_list')?>">Clientes</a></li>
+                           <li class="active"><a href="<?=base_url('users/load_list')?>">Usuarios</a></li>
                             <li><a href="forms-validation.html">Form Validation</a></li>
                             <li><a href="wysihtml.html">Wysihtml</a></li>
                             <li><a href="file-upload.html">File Upload</a></li>

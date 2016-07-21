@@ -33,7 +33,7 @@ class Clientes extends CI_Controller {
         $this->data['item'] = $_cliente_info;
 
     	$this->data['view'] = $this->controller.'/load_update';
-
+        
         $this->load->view('home/load_index',$this->data);
     }
 

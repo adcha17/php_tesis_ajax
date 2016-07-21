@@ -2,7 +2,7 @@
 
 if ($('table').length > 0) {
 	$('table').DataTable();
-}
+	}
 	
 	$('form').on('click','.btn-add',function(event){
 	event.preventDefault();

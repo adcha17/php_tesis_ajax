@@ -14,7 +14,7 @@
 	<div class="container">
 		<div class="row">
 				<div class="col-md-12">
-					<h4>LISTADO DE CLIENTES</h4>
+					<h4>LISTADO DE EMPLEADOS</h4>
 				</div>
 				<div class="pull-right">
 					<a href="<?php echo base_url($controller.'/load_add')?>" class="btn btn-info btn-sm">
@@ -37,7 +37,7 @@
 			   			<th>Dirección</th>
 			   			<th>Estado Civil</th>
 			   			<th>Fecha Nacimiento</th>
-			   			<th></th>
+						<th></th>
 			   			
 			   		</tr>
 			   	</thead>
@@ -52,7 +52,8 @@
 			   		<tr>
 			   			<td><?php echo $items[$x]->id ?></td>
 			   			<td><?php echo $items[$x]->name ?></td>
-			   			<td><?php echo $items[$x]->photo ?></td
+			   			
+			   			<td><img src="<?php echo $items[$x]->photo ?>"   width="50"></td>
 			   			<td><?php echo $items[$x]->last_name ?></td>
 			   			<td><?php echo $items[$x]->dni ?></td>			   			
 			   			<td><?php echo $items[$x]->sex ?></td>

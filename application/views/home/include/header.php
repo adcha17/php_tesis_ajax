@@ -117,12 +117,12 @@
                     </li>
                     <li class="has-submenu active"><a href="#"><i class="fa fa-file-text-o"></i> <span class="nav-label">MANTENIMIENTOS</span></a>
                       <ul class="list-unstyled">
-                          <li class="active"><a href="<?=base_url('clientes/load_list')?>">Clientes</a></li>
-<<<<<<< HEAD
-                           <li class="active"><a href="<?=base_url('users/load_list')?>">Usuarios</a></li>
-=======
-                           <li class="active"><a href="<?=base_url('categorias/load_list')?>">Categorias</a></li>
->>>>>>> d068621f70af82fbc7ca1e1153ce183c0b9d2ceb
+                          <li><a href="<?=base_url('clientes/load_list')?>">Clientes</a></li>
+
+                           <li><a href="<?=base_url('users/load_list')?>">Usuarios</a></li>
+
+                           <li><a href="<?=base_url('categorias/load_list')?>">Categorias</a></li>
+
                             <li><a href="forms-validation.html">Form Validation</a></li>
                             <li><a href="wysihtml.html">Wysihtml</a></li>
                             <li><a href="file-upload.html">File Upload</a></li>

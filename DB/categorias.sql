@@ -27,13 +27,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `categorias` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
   `descripcion` varchar(250) COLLATE utf8_spanish_ci NOT NULL,
   `status` int(11) NOT NULL DEFAULT '1',
   `add_date` date NOT NULL,
   `add_update` date NOT NULL,
   `usuario_id` int(11) NOT NULL
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -48,25 +49,4 @@ INSERT INTO `categorias` (`id`, `name`, `descripcion`, `status`, `add_date`, `ad
 (5, 'edfwefqef', 'qwefefqwefw', 1, '0000-00-00', '0000-00-00', 0),
 (6, 'dfwfeqf', 'fwegwefffffffffwrgethgejkrukytjtujrt', 1, '0000-00-00', '0000-00-00', 0);
 
---
--- Índices para tablas volcadas
---
 
---
--- Indices de la tabla `categorias`
---
-ALTER TABLE `categorias`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `categorias`
---
-ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

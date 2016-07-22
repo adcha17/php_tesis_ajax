@@ -52,7 +52,7 @@
 			   		<tr>
 			   			<td><?php echo $items[$x]->id ?></td>
 			   			<td><?php echo $items[$x]->name ?></td>
-			   			<td><?php echo $items[$x]->photo ?></td
+			   			<td><?php echo $items[$x]->photo ?></td>
 			   			<td><?php echo $items[$x]->last_name ?></td>
 			   			<td><?php echo $items[$x]->dni ?></td>			   			
 			   			<td><?php echo $items[$x]->sex ?></td>

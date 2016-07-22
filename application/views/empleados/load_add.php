@@ -5,21 +5,37 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
 	<link rel="stylesheet" href="<?php echo base_url('public/css/bootstrap.css')?>">
-	<!-- <link rel="stylesheet" href="<?php echo base_url('public/css/style.css')?>"> -->
-
-<script> var URL = "<?php echo base_url()?>"</script>
+	<link rel="stylesheet" href="<?php echo base_url('public/css/style.css')?>">
+	<link rel="stylesheet" href="<?php echo base_url('public/css/jquery-ui.css')?>">
+	<script src="<?php echo base_url('public/js/jquery.min.js')?>"></script>
+	<script> 
+      var URL = "<?php echo base_url()?>"    
+    </script>
 </head> 
 <body>
 	<div class="container">
-		<div class="wrapper">
+		<div class="">
 		<div class="col-md-12">
-		   <form action="<?php echo base_url($controller.'/action_add')?>" method="POST" role="form">
+		   <form id="file_upload_form" action="<?php echo base_url($controller.'/upload') ?>" method="POST" role="form">
 		   		<legend>Datos del Empleado | <?php echo $controller?></legend>
 		   		
 		   		<div class="row">
-                  <div class="form-group col-md-2">
+                  <div class="form-group col-md-3" >
                     <label >Nombre:</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Nombre">
+                  </div>
+                  <div class="form-group col-md-4">
+                  
+			            <label for="upload_field">Foto</label>                 
+                  <input type="hidden" id="photo" name="photo">
+			            <input type="file" id="upload_field[]" name="upload_field[]" class="load_photos" name="upload_field" />
+                                     
+              <br/>
+			        <div id="res"></div>
+
+			        <div class="msj_success">
+			            <div class="loading" ><img src="<?php echo base_url('public/images/loading.GIF')?>" /></div>
+			        </div>
                   </div>
                 </div>
                 <div class="row">
@@ -69,7 +85,12 @@
 		   				<option value="2">LIMA</option>
 		   			</select>
                   </div>
+                  <div class="form-group col-md-2">
+                    <label >Fecha de Nacimiento:</label>
 
+                    <input type="hidden" id="fec_nac" name="fec_nac">
+                    <input type="text" class="form-control" id="datepicker" name="datepicker" placeholder="--SELECCIONE--">
+                  </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-md-2">
@@ -88,8 +109,7 @@
                   </div>
                 </div>
 		   	
-		   		P
-		   		
+		   	
 		   	
 		   		<button type="submit" class="btn btn-primary btn-add"><span class="glyphicon glyphicon-send" aria-hidden="true"> REGISTRAR</span></button>
 		   		<a href="<?php echo base_url($controller.'/load_list')?>" class="btn btn-warning">
@@ -103,11 +123,11 @@
 		</div>
 
 	</div>
-
-
-	<script src="<?php echo base_url('public/js/jquery.min.js')?>"></script>
+			
 	<script src="<?php echo base_url('public/js/bootstrap.js')?>"></script>
 	<script src="<?php echo base_url('public/js/bootbox.js')?>"></script>
+  <script src="<?php echo base_url('public/js/jquery-ui.js') ?>"></script>
 	<script src="<?php echo base_url('public/js/master/'.$controller.'.js') ?>"></script>
+	
 </body>
 </html>

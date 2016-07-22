@@ -2,3 +2,45 @@
 	max-width: 600px;
 	margin: 0 auto;
 }
+#upload_frame{
+                display:block;
+                height:0;
+                width:0;
+}
+#msg{
+    background-color:#FFE07E;
+    border-radius:5px;
+    padding:5px;
+    display:none;
+    width:200px;
+    font:italic 13px/18px arial,sans-serif;
+}
+#res{
+    width:800px;
+}
+#res img{
+    float: left;
+    padding: 6px;
+    border: 1px solid #CCC;
+}
+.msj_success{
+    background: rgba(23, 9, 57, 0.8);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: none;
+}
+.msj_success .loading{
+    font-family: 'Nunito', sans-serif;
+    width: 80%;
+    color: #FFF;
+    text-align: center !important;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 55px;
+    margin: 15% 10%;
+
+}

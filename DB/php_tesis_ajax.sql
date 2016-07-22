@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-07-2016 a las 17:09:39
+-- Tiempo de generación: 22-07-2016 a las 18:40:21
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.21
 
@@ -90,6 +90,7 @@ INSERT INTO `clientes` (`id`, `name`, `last_name`, `sex`, `dni`, `address`, `dis
 CREATE TABLE `empleados` (
   `id` int(11) NOT NULL,
   `name` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
+  `photo` varchar(500) COLLATE utf8_spanish_ci NOT NULL,
   `last_name` varchar(250) COLLATE utf8_spanish_ci NOT NULL,
   `sex` char(1) COLLATE utf8_spanish_ci NOT NULL,
   `dni` char(8) COLLATE utf8_spanish_ci NOT NULL,
@@ -108,11 +109,8 @@ CREATE TABLE `empleados` (
 -- Volcado de datos para la tabla `empleados`
 --
 
-INSERT INTO `empleados` (`id`, `name`, `last_name`, `sex`, `dni`, `address`, `department_id`, `province_id`, `district_id`, `civil_status`, `fec_nac`, `status`, `add_date`, `update_date`) VALUES
-(1, 'Anibal', 'Chacon', 'M', '12345678', 'sfdsfdfd', 1, 1, 1, 'S', '2016-07-11', 1, '0000-00-00', '0000-00-00'),
-(2, 'Diego', 'Aguirre', 'M', '87654321', 'adsasdas', 2, 2, 2, 'C', '2016-07-04', 1, '0000-00-00', '0000-00-00'),
-(3, 'asdas', 'qwe', 'M', '12345678', 'sfdsfdfd', 1, 1, 1, 'S', '2016-07-11', 1, '0000-00-00', '0000-00-00'),
-(4, 'qeqwe', 'Afsd', 'M', '87654321', 'adsasdas', 2, 2, 2, 'C', '2016-07-04', 1, '0000-00-00', '0000-00-00');
+INSERT INTO `empleados` (`id`, `name`, `photo`, `last_name`, `sex`, `dni`, `address`, `department_id`, `province_id`, `district_id`, `civil_status`, `fec_nac`, `status`, `add_date`, `update_date`) VALUES
+(0, 'sdqdqwdsdwfgwegwergwer', 'http://localhost:8085/server/php_tesis_ajax/uploads/Koala.jpg', 'qwedqwdqwd', 'M', '46565135', 'sdfgwdfwf', 1, 1, 1, '1', '2016-07-22', 1, '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -211,12 +209,6 @@ ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `empleados`
---
-ALTER TABLE `empleados`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `marcas`
 --
 ALTER TABLE `marcas`
@@ -242,11 +234,6 @@ ALTER TABLE `categorias`
 --
 ALTER TABLE `clientes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT de la tabla `empleados`
---
-ALTER TABLE `empleados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `marcas`
 --

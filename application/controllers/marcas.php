@@ -18,7 +18,10 @@ class Marcas extends CI_Controller {
         //_is_ajax_request();
         
 
-        $this->load->view($this->controller.'/load_add',$this->data);
+        
+
+         $this->data ['view'] = $this->controller.'/load_add';
+      $this->load->view('home/load_index',$this->data);
     }
 
     /*
@@ -30,10 +33,12 @@ class Marcas extends CI_Controller {
 
         if (!$_marcas_info) 
             _build_json(FALSE,'marca no registrado en la DB');
-        
-        $this->data['item'] = $_marcas_info;
 
-        $this->load->view($this->controller.'/load_update',$this->data);
+         $this->data['item'] = $_marcas_info;
+        $this->data['view'] = $this->controller.'/load_update';
+        
+         $this->load->view('home/load_index',$this->data);
+
     }
 
     /*
@@ -41,8 +46,11 @@ class Marcas extends CI_Controller {
     */
     public function load_list()
     {
-      $this->data['items'] = $this->marcas_model->get();
-      $this->load->view($this->controller.'/load_list',$this->data);
+        $this->data['items'] = $this->marcas_model->get();
+        $this->data ['view'] = $this->controller.'/load_list';
+      $this->load->view('home/load_index',$this->data);
+      
+     
     }
 
     /*

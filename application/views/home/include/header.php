@@ -123,7 +123,7 @@
 
                            <li><a href="<?=base_url('categorias/load_list')?>">Categorias</a></li>
 
-                            <li><a href="forms-validation.html">Form Validation</a></li>
+                            <li><a href="<?=base_url('marcas/load_list')?>">Marcas</a></li>
                             <li><a href="wysihtml.html">Wysihtml</a></li>
                             <li><a href="file-upload.html">File Upload</a></li>
                             <li><a href="image-crop.html">Image Crop</a></li>

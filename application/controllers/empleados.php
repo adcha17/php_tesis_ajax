@@ -14,10 +14,7 @@ class Empleados extends CI_Controller {
  	*/
 	public function load_add()
     {
-    	//_beta();
-    	//_is_ajax_request();
     	
-
     	$this->load->view($this->controller.'/load_add',$this->data);
     }
 
@@ -32,8 +29,8 @@ class Empleados extends CI_Controller {
             _build_json(FALSE,'empleado no registrado en la DB');
         
         $this->data['item'] = $_empleado_info;
-
-    	$this->load->view($this->controller.'/load_update',$this->data);
+        
+        $this->load->view($this->controller.'/load_update',$this->data);
     }
 
     /*
@@ -51,16 +48,36 @@ class Empleados extends CI_Controller {
     public function action_add()
     {
         $_data = $this->validate_post();
-        
+
         $_result = $this->empleados_model->add($_data['data']);
         
-        die();
-
         if ($_result)
             _build_json(TRUE,'empleado registrado');
         
         _build_json(FALSE,'Error al registrar empleado');
     	
+    }
+    //funcion para subir archivos
+    public function upload()
+    {   
+        $uploads_dir = 'uploads/';
+        for ($i = 0; $i < count($_FILES['upload_field']['name']); $i++) {
+
+
+            $array[] = array(
+                'name' => $_FILES['upload_field']['name'][$i],
+                'type' => $_FILES['upload_field']['type'][$i],
+                'size' => $_FILES['upload_field']['size'][$i],
+                'tmp_name' => $_FILES['upload_field']['tmp_name'][$i]
+            );
+            $tmp_name = $_FILES['upload_field']['tmp_name'][$i];
+            $name = $_FILES['upload_field']['name'][$i];
+            move_uploaded_file($tmp_name, $uploads_dir . $name);
+        }
+
+        exit(json_encode($array));
+
+        
     }
 
     /*
@@ -93,25 +110,39 @@ class Empleados extends CI_Controller {
                 _build_json(FALSE,'empleado no registrado en la DB');
          }
 
-        
-
     	$_name = $this->input->post('name',TRUE);
     	$_data['name'] = _validate_empty($_name,'ingresa tu nombre');
+
+        $_photo = $this->input->post('photo',TRUE);
+        $_data['photo'] = _validate_empty($_photo,'ingresa tu foto');
 
         $_last_name = $this->input->post('last_name',TRUE);
         $_data['last_name'] = _validate_empty($_last_name,'ingresa tu apellido');
 
-        $_sex = $this->input->post('sex',TRUE);
-        $_data['sex'] = _validate_empty($_sex,'selecciona tu sexo');
-
         $_dni = $this->input->post('dni',TRUE);
         $_data['dni'] = _validate_empty($_dni,'ingresa tu dni');
 
-        $_address = $this->input->post('address',TRUE);
-        $_data['address'] = _validate_empty($_address,'ingresa tu dirección');
+        $_sex = $this->input->post('sex',TRUE);
+        $_data['sex'] = _validate_empty($_sex,'selecciona tu sexo');
+
+        $_department_id = $this->input->post('department_id',TRUE);
+        $_data['department_id'] = _validate_empty($_department_id,'selecciona tu departamento');
+
+        $_civil_status = $this->input->post('civil_status',TRUE);
+        $_data['civil_status'] = _validate_empty($_civil_status,'selecciona tu estado civil');
+
+        $_province_id = $this->input->post('province_id',TRUE);
+        $_data['province_id'] = _validate_empty($_province_id,'selecciona tu provincia');
+
+                
+        $_fec_nac = $this->input->post('fec_nac',TRUE);        
+        $_data['fec_nac'] = _validate_empty($_fec_nac,'selecciona tu fecha de nacimiento');
 
         $_district_id = $this->input->post('district_id',TRUE);
         $_data['district_id'] = _validate_empty($_district_id,'selecciona tu distrito');
+
+        $_address = $this->input->post('address',TRUE);
+        $_data['address'] = _validate_empty($_address,'ingresa tu dirección');
 
     	return array('data'=>$_data, 'empleado_id'=>$_empleado_id);
 

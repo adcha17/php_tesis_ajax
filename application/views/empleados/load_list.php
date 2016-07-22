@@ -30,8 +30,13 @@
 			   		<tr>
 			   			<th>#</th>
 			   			<th>Nombre</th>
+			   			<th>Foto</th>
 			   			<th>Apellidos</th>
 			   			<th>Dni</th>
+			   			<th>Sexo</th>
+			   			<th>Dirección</th>
+			   			<th>Estado Civil</th>
+			   			<th>Fecha Nacimiento</th>
 			   			<th></th>
 			   			
 			   		</tr>
@@ -47,8 +52,14 @@
 			   		<tr>
 			   			<td><?php echo $items[$x]->id ?></td>
 			   			<td><?php echo $items[$x]->name ?></td>
+			   			<td><?php echo $items[$x]->photo ?></td
 			   			<td><?php echo $items[$x]->last_name ?></td>
-			   			<td><?php echo $items[$x]->dni ?></td>
+			   			<td><?php echo $items[$x]->dni ?></td>			   			
+			   			<td><?php echo $items[$x]->sex ?></td>
+			   			<td><?php echo $items[$x]->address ?></td>
+			   			<td><?php echo $items[$x]->civil_status ?></td>
+			   			<td><?php echo $items[$x]->fec_nac ?></td>
+
 			   			<td>
 			   				<a href="<?php echo base_url($controller.'/load_update/'.$items[$x]->id)?>" class="btn btn-success btn-sm">
 			   					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>

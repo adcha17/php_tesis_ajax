@@ -119,6 +119,8 @@
                       <ul class="list-unstyled">
                           <li><a href="<?=base_url('clientes/load_list')?>">Clientes</a></li>
 
+                          <li><a href="<?=base_url('empleados/load_list')?>">Empleados</a></li>
+
                            <li><a href="<?=base_url('users/load_list')?>">Usuarios</a></li>
 
                            <li><a href="<?=base_url('categorias/load_list')?>">Categorias</a></li>

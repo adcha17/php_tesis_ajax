@@ -1,5 +1,9 @@
 (function(){
 
+	if ($('table').length > 0) {
+		$('table').DataTable();
+	}
+
 	if ($('#datepicker').length > 0) {
 		$("#datepicker").datepicker({
 		  changeMonth: true,
@@ -48,11 +52,6 @@
         _parent.attr('target', 'upload_frame').submit();
 
     }
-        
-
-	if ($('table').length > 0) {
-		$('table').DataTable();
-	}
 	
 	$('form').on('click','.btn-add',function(event){
 	event.preventDefault();

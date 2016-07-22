@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-07-2016 a las 18:40:21
+-- Tiempo de generación: 22-07-2016 a las 19:14:31
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.21
 
@@ -110,7 +110,7 @@ CREATE TABLE `empleados` (
 --
 
 INSERT INTO `empleados` (`id`, `name`, `photo`, `last_name`, `sex`, `dni`, `address`, `department_id`, `province_id`, `district_id`, `civil_status`, `fec_nac`, `status`, `add_date`, `update_date`) VALUES
-(0, 'sdqdqwdsdwfgwegwergwer', 'http://localhost:8085/server/php_tesis_ajax/uploads/Koala.jpg', 'qwedqwdqwd', 'M', '46565135', 'sdfgwdfwf', 1, 1, 1, '1', '2016-07-22', 1, '0000-00-00', '0000-00-00');
+(1, 'sdqdqwdsdwfgwegwergwer', 'http://localhost:8085/server/php_tesis_ajax/uploads/Koala.jpg', 'qwedqwdqwd', 'M', '46565135', 'sdfgwdfwf', 1, 1, 1, '1', '2016-07-22', 1, '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -209,6 +209,12 @@ ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `empleados`
+--
+ALTER TABLE `empleados`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `marcas`
 --
 ALTER TABLE `marcas`
@@ -234,6 +240,11 @@ ALTER TABLE `categorias`
 --
 ALTER TABLE `clientes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT de la tabla `empleados`
+--
+ALTER TABLE `empleados`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `marcas`
 --

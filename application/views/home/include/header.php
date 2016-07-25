@@ -1,9 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- Mirrored from freakpixels.com/portfolio/brio/forms-element.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jul 2016 14:38:51 GMT -->
 <head>
   
     <meta charset="utf-8">
@@ -39,6 +36,11 @@
     <!-- Base Styling  -->
     <link rel="stylesheet" href="<?=base_url('public')?>/assets/css/app/app.v1.css" />
 
+    <!--estilos propios-->
+      <link rel="stylesheet" href="<?php echo base_url('public/css/style.css')?>">
+      <link rel="stylesheet" href="<?php echo base_url('public/css/jquery-ui.css')?>">
+
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -71,7 +73,7 @@
         </div>
       </div>
     </div>
-    <!-- Preloader -->  
+    <!-- END Preloader -->  
     
   <aside class="left-panel">
         

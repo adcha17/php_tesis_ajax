@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
-	<link rel="stylesheet" href="<?php echo base_url('public/css/bootstrap.css')?>">
-	<link rel="stylesheet" href="<?php echo base_url('public/css/style.css')?>">
-	<link rel="stylesheet" href="<?php echo base_url('public/css/jquery-ui.css')?>">
-	<script src="<?php echo base_url('public/js/jquery.min.js')?>"></script>
-  
-	<script>var URL = "<?php echo base_url()?>"</script>
-</head> 
-<body>
+
 	<div class="container">
 		<div class="">
 		<div class="col-md-12">
@@ -72,8 +59,8 @@
 		   			<label for="">Estado Civil</label>
 		   			<select name="civil_status" id="civil_status" class="form-control">
 		   				<option value="">--SELECCIONE--</option>
-		   				<option value="1" <?php echo ($item->district_id==1)?'selected':'' ?> >SOLTERO</option>
-              <option value="2" <?php echo ($item->district_id==2)?'selected':'' ?> >CASADO</option>
+		   				<option value="S" <?php echo ($item->district_id==1)?'selected':'' ?> >SOLTERO</option>
+              <option value="C" <?php echo ($item->district_id==2)?'selected':'' ?> >CASADO</option>
 		   			</select>
 		   	      </div>
                 </div>
@@ -90,7 +77,7 @@
                     <label >Fecha de Nacimiento:</label>
 
                     <input type="hidden" id="fec_nac" name="fec_nac"  value="<?php echo $item->fec_nac ?>">
-                    <input type="text" class="form-control" id="datepicker" name="datepicker" placeholder="--SELECCIONE--" value="<?php echo $item->fec_nac ?>">
+                    <input type="text" class="form-control" id="date" name="datepicker" placeholder="--SELECCIONE--" value="<?php echo $item->fec_nac ?>">
                   </div>
                 </div>
                 <div class="row">
@@ -124,13 +111,3 @@
 		</div>
 
 	</div>
-		
-
-	
-	<script src="<?php echo base_url('public/js/bootstrap.js')?>"></script>
-	<script src="<?php echo base_url('public/js/bootbox.js')?>"></script>
-  <script src="<?php echo base_url('public/js/jquery-ui.js') ?>"></script>
-	<script src="<?php echo base_url('public/js/master/'.$controller.'.js') ?>"></script>
-	
-</body>
-</html>

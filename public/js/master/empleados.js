@@ -4,21 +4,27 @@
 		$('table').DataTable();
 	}
 
-	if ($('#datepicker').length > 0) {
-		$("#datepicker").datepicker({
+	if ($('#date').length > 0) {
+		$("#date").datepicker({
 		  changeMonth: true,
 		  changeYear: true,
 		  dateFormat: "yy-mm-dd"
 		});
 
-		$("#datepicker").on('change', function(event) {
+		$("#date").on('change', function(event) {
 		  event.preventDefault();
-		  var fec_nac = $('#datepicker').datepicker().val();
+		  var fec_nac = $('#date').datepicker().val();
 		  $("#fec_nac").attr('value', fec_nac);
 		});
 	}
 
 	$(document).ready(function() {
+
+		$(".load_photos").on("click", function() {
+			
+			$('form').attr('action',URL+'empleados/upload');            
+    	});
+
 
         $(".load_photos").on("change", function() {
             var _this = $(this);                    
@@ -56,7 +62,6 @@
 	$('form').on('click','.btn-add',function(event){
 	event.preventDefault();
 
-
 		$('form').attr('action',URL+'empleados/action_add');
 
 		var _form = $(this).closest('form');
@@ -86,37 +91,37 @@
 	$('form').on('click','.btn-update',function(event){
 	event.preventDefault();
 
-	$('form').attr('action',URL+'empleados/action_update');
-	
-	var _form = $(this).closest('form');
-	var _url = _form.attr('action');
-	var _data = _form.serializeArray()
+		$('form').attr('action',URL+'empleados/action_update');
+		
+		var _form = $(this).closest('form');
+		var _url = _form.attr('action');
+		var _data = _form.serializeArray()
 
-		$.ajax({
-			url: _url,
-			type: 'POST',
-			dataType: 'json',
-			data: _data,
-		})
-		.done(function(_response) {
-			
-			if (Boolean(_response.status)) {
-				window.location = URL+'empleados/load_list';
-			}else{
-				bootbox.alert(_response.message);
-			}
-		})
-		.fail(function() {
-			console.log("error");
-		});
+			$.ajax({
+				url: _url,
+				type: 'POST',
+				dataType: 'json',
+				data: _data,
+			})
+			.done(function(_response) {
+				
+				if (Boolean(_response.status)) {
+					window.location = URL+'empleados/load_list';
+				}else{
+					bootbox.alert(_response.message);
+				}
+			})
+			.fail(function() {
+				console.log("error");
+			});
 
 	});
 
 	$('table').on('click','.btn-delete',function(event){
 	event.preventDefault();
 
-	var _this = $(this);
-	var _url = _this.attr('href');
+		var _this = $(this);
+		var _url = _this.attr('href');
 
 		bootbox.confirm("¿Deseas eliminar este empleado?", function(result) {
 		  if (Boolean(result)) {

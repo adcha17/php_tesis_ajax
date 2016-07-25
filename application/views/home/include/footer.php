@@ -44,10 +44,11 @@
      
     <!-- Custom JQuery -->
   <script src="<?=base_url('public')?>/assets/js/app/custom.js" type="text/javascript"></script>
-    
 
+    <!-- Librerias propias -->
+    <script src="<?php echo base_url('public/js/jquery-ui.js') ?>"></script>
+    <script src="<?php echo base_url('public/js/bootbox.js')?>"></script>
+    <script src="<?php echo base_url('public/js/jquery.dataTables.min.js') ?>"></script>
+    <script src="<?php echo base_url('public/js/master/'.$controller.'.js') ?>"></script>
     
-     
-
-<!-- Mirrored from freakpixels.com/portfolio/brio/forms-element.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jul 2016 14:38:55 GMT -->
 </html>

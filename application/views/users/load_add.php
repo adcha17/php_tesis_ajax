@@ -1,21 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
-	<link rel="stylesheet" href="<?php echo base_url('public/css/bootstrap.css')?>">
-	<link rel="stylesheet" href="<?php echo base_url('public/css/style.css')?>">
-
-<script> var URL = "<?php echo base_url()?>"</script>
-</head> 
-<body>
-	<div class="container">
-		<div class="wrapper">
-		<div class="col-md-12">
-		   <form action="<?php echo base_url($controller.'/action_add')?>" method="POST" role="form">
+<div class="page-header">
+<h1>Forms <small>General forms elements</small></h1>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="pull-right">
+<a href="<?php echo base_url($controller.'/load_list')?>" class="btn btn-info btn-sm">
+<span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+</a>
+</div>
+</div>
+</div>
+    
+            <div class="row">
+              <div class="col-md-12">
+                  <div class="panel panel-default">
+                        <div class="panel-heading">AGREGAR USUARIOS</div>
+                        <div class="panel-body">
+		   	<form action="<?php echo base_url($controller.'/action_add')?>" method="POST" role="form">
 		   		<legend>Datos del Usuario | <?php echo $controller?></legend>
-		   	
 				
 		   	   
 		   	   <div class="form-group">
@@ -75,9 +77,4 @@
 	</div>
 
 
-	<script src="<?php echo base_url('public/js/jquery.min.js')?>"></script>
-	<script src="<?php echo base_url('public/js/bootstrap.js')?>"></script>
-	<script src="<?php echo base_url('public/js/bootbox.js')?>"></script>
-	<script src="<?php echo base_url('public/js/master/'.$controller.'.js') ?>"></script>
-</body>
-</html>
+	</div>

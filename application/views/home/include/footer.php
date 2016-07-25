@@ -10,9 +10,6 @@
     </section>
     <!-- Content Block Ends Here (right box)-->
     
-    
-    
- 
     <script src="<?=base_url('public')?>/assets/js/plugins/underscore/underscore-min.js"></script>
     <!-- Bootstrap -->
     <script src="<?=base_url('public')?>/assets/js/bootstrap/bootstrap.min.js"></script>
@@ -44,8 +41,15 @@
      
     <!-- Custom JQuery -->
   <script src="<?=base_url('public')?>/assets/js/app/custom.js" type="text/javascript"></script>
-    
 
+  
+      <script src="<?php echo base_url('public/js/bootstrap.js')?>"></script>
+    
+    <script src="<?php echo base_url('public/js/jquery.dataTables.min.js') ?>"></script>
+    <script src="<?php echo base_url('public/js/bootbox.js')?>"></script>
+    <script src="<?php echo base_url('public/js/jquery-ui.js') ?>"></script>
+    <script src="<?php echo base_url('public/js/master/'.$controller.'.js') ?>"></script>
+  
     
      
 

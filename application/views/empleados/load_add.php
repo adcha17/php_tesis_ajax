@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
-	<link rel="stylesheet" href="<?php echo base_url('public/css/bootstrap.css')?>">
-	<link rel="stylesheet" href="<?php echo base_url('public/css/style.css')?>">
-	<link rel="stylesheet" href="<?php echo base_url('public/css/jquery-ui.css')?>">
-	<script src="<?php echo base_url('public/js/jquery.min.js')?>"></script>
-	<script> 
-      var URL = "<?php echo base_url()?>"    
-    </script>
-</head> 
-<body>
-	<div class="container">
-		<div class="">
-		<div class="col-md-12">
+<div class="page-header">
+<h1>Forms <small>General forms elements</small></h1>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="pull-right">
+<a href="<?php echo base_url($controller.'/load_list')?>" class="btn btn-info btn-sm">
+<span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+</a>
+</div>
+</div>
+</div>
+    
+            <div class="row">
+              <div class="col-md-12">
+                  <div class="panel panel-default">
+                        <div class="panel-heading">AGREGAR EMPLEADOS</div>
+                        <div class="panel-body">
 		   <form id="file_upload_form" action="<?php echo base_url($controller.'/upload') ?>" method="POST" role="form">
 		   		<legend>Datos del Empleado | <?php echo $controller?></legend>
 		   		
@@ -124,10 +124,4 @@
 
 	</div>
 			
-	<script src="<?php echo base_url('public/js/bootstrap.js')?>"></script>
-	<script src="<?php echo base_url('public/js/bootbox.js')?>"></script>
-  <script src="<?php echo base_url('public/js/jquery-ui.js') ?>"></script>
-	<script src="<?php echo base_url('public/js/master/'.$controller.'.js') ?>"></script>
-	
-</body>
-</html>
+	</div>

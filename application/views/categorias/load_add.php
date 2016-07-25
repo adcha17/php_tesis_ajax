@@ -14,7 +14,7 @@
             <div class="row">
               <div class="col-md-12">
                   <div class="panel panel-default">
-                        <div class="panel-heading">Lista de Categorias</div>
+                        <div class="panel-heading">AGREGAR CATEGORIAS</div>
                         <div class="panel-body">
                              <form action="<?php echo base_url($controller.'/action_add')?>" method="POST" role="form">
           <legend>Datos de Categoria | <?php echo $controller?></legend>
@@ -48,5 +48,3 @@
                 </div>
             </div>
 
-<script src="<?php echo base_url('public/js/bootbox.js')?>"></script>
-<script src="<?php echo base_url('public/js/master/'.$controller.'.js') ?>"></script>

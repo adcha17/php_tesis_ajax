@@ -1,4 +1,3 @@
-
 	<div class="container">
 		<div class="row">
 				<div class="col-md-12">
@@ -13,6 +12,7 @@
 			<hr>
 			<div class="row">
 			<div class="col-md-12">
+
 			   <table class="table table-bordered table-hover">
 			   	<thead>
 			   		<tr>
@@ -40,8 +40,10 @@
 			   		<tr>	
 			   			<td><?php echo $items[$x]->id ?></td>
 			   			<td><?php echo $items[$x]->name ?></td>
-			   			
+
+			   	
 			   			<td class="text-center"><img src="<?php echo $items[$x]->photo ?>" width="50"></td>
+
 			   			<td><?php echo $items[$x]->last_name ?></td>
 			   			<td><?php echo $items[$x]->dni ?></td>			   			
 			   			<td class="text-center"><?php echo $items[$x]->sex ?></td>
@@ -80,3 +82,4 @@
 		</div>
 
 	</div>
+

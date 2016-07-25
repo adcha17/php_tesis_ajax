@@ -14,7 +14,7 @@
     <div class="row">
       <div class="col-md-12">
           <div class="panel panel-default">
-                <div class="panel-heading">Lista de Categorias</div>
+                <div class="panel-heading">LISTADO DE CATEGORIAS</div>
                 <div class="panel-body">
                 	<table class="table table-bordered table-hover">
 			   	<thead>
@@ -67,12 +67,5 @@
             </div>
         </div>
     </div>
-
-    <script src="<?php echo base_url('public/js/jquery.min.js')?>"></script>
-	<script src="<?php echo base_url('public/js/bootstrap.js')?>"></script>
-	<script src="<?php echo base_url('public/js/bootbox.js')?>"></script>
-	<script src="<?php echo base_url('public/js/jquery.dataTables.min.js') ?>"></script>
-    <script src="<?php echo base_url('public/js/master/'.$controller.'.js') ?>"></script>
-
 
 

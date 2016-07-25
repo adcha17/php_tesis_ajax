@@ -4,7 +4,7 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="pull-right">
-          <a href="<?php echo base_url($controller.'/load_add')?>" class="btn btn-info btn-sm">
+          <a href="<?php echo base_url($controller.'/load_list')?>" class="btn btn-info btn-sm">
               <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
             </a>
         </div>
@@ -14,7 +14,7 @@
             <div class="row">
               <div class="col-md-12">
                   <div class="panel panel-default">
-                        <div class="panel-heading">Listade de Clientes</div>
+                        <div class="panel-heading">Actualizacion del Cliente</div>
                         <div class="panel-body">
                         	<form action="<?php echo base_url($controller.'/action_update')?>" method="POST" role="form">
 		   		<legend>Datos del Cliente | <?php echo $controller?></legend>
@@ -75,5 +75,3 @@
                 </div>
             </div>
 
-<script src="<?php echo base_url('public/js/bootbox.js')?>"></script>
-<script src="<?php echo base_url('public/js/master/'.$controller.'.js') ?>"></script>

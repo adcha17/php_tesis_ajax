@@ -2,6 +2,7 @@
 	<div class="container">
 		<div class="">
 		<div class="col-md-12">
+
 		   <form id="file_upload_form" action="<?php echo base_url($controller.'/upload') ?>" method="POST" role="form">
 		   		<legend>Datos del Empleado | <?php echo $controller?></legend>
 		   		

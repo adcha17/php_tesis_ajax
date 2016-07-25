@@ -15,6 +15,10 @@
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="<?=base_url('public')?>/assets/css/bootstrap/bootstrap.css" /> 
 
+  <link rel="stylesheet" href="<?php echo base_url('public/css/style.css')?>">
+
+  <link rel="stylesheet" href="<?php echo base_url('public/css/jquery-ui.css')?>">
+
   <!-- Typeahead Styling  -->
     <link rel="stylesheet" href="<?=base_url('public')?>/assets/css/plugins/typeahead/typeahead.css" />
     
@@ -49,7 +53,7 @@
     <![endif]-->
        <!-- JQuery v1.9.1 -->
 
-  <link rel="stylesheet" href="<?php echo base_url('public/css/jquery.dataTables.min.css')?>">
+<link rel="stylesheet" href="<?php echo base_url('public/css/jquery.dataTables.min.css')?>"> 
 
   <script src="<?=base_url('public')?>/assets/js/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
   <script>var URL ="<?=base_url()?>"</script>

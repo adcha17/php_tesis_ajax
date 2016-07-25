@@ -2,10 +2,10 @@
 -- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 22-07-2016 a las 19:14:31
--- Versión del servidor: 10.1.13-MariaDB
--- Versión de PHP: 5.6.21
+-- Host: 127.0.0.1
+-- Generation Time: Jul 25, 2016 at 07:07 PM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.6.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,29 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `php_tesis_ajax`
+-- Database: `php_tesis_ajax`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categorias`
+-- Table structure for table `cargos`
+--
+
+CREATE TABLE `cargos` (
+  `id` int(11) NOT NULL,
+  `nombre_cargo` varchar(150) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `descripcion` varchar(300) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `estado` int(11) NOT NULL,
+  `fecha_registro` date NOT NULL,
+  `fecha_modificacion` date NOT NULL,
+  `usuario_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categorias`
 --
 
 CREATE TABLE `categorias` (
@@ -37,7 +53,7 @@ CREATE TABLE `categorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `categorias`
+-- Dumping data for table `categorias`
 --
 
 INSERT INTO `categorias` (`id`, `name`, `descripcion`, `status`, `add_date`, `add_update`, `usuario_id`) VALUES
@@ -54,7 +70,7 @@ INSERT INTO `categorias` (`id`, `name`, `descripcion`, `status`, `add_date`, `ad
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `clientes`
+-- Table structure for table `clientes`
 --
 
 CREATE TABLE `clientes` (
@@ -71,7 +87,7 @@ CREATE TABLE `clientes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `clientes`
+-- Dumping data for table `clientes`
 --
 
 INSERT INTO `clientes` (`id`, `name`, `last_name`, `sex`, `dni`, `address`, `district_id`, `status`, `add_date`, `update_date`) VALUES
@@ -84,7 +100,7 @@ INSERT INTO `clientes` (`id`, `name`, `last_name`, `sex`, `dni`, `address`, `dis
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `empleados`
+-- Table structure for table `empleados`
 --
 
 CREATE TABLE `empleados` (
@@ -106,7 +122,7 @@ CREATE TABLE `empleados` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `empleados`
+-- Dumping data for table `empleados`
 --
 
 INSERT INTO `empleados` (`id`, `name`, `photo`, `last_name`, `sex`, `dni`, `address`, `department_id`, `province_id`, `district_id`, `civil_status`, `fec_nac`, `status`, `add_date`, `update_date`) VALUES
@@ -115,7 +131,7 @@ INSERT INTO `empleados` (`id`, `name`, `photo`, `last_name`, `sex`, `dni`, `addr
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `marcas`
+-- Table structure for table `marcas`
 --
 
 CREATE TABLE `marcas` (
@@ -129,7 +145,7 @@ CREATE TABLE `marcas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
--- Volcado de datos para la tabla `marcas`
+-- Dumping data for table `marcas`
 --
 
 INSERT INTO `marcas` (`id`, `name`, `descripcion`, `status`, `add_date`, `add_update`, `usuario_id`) VALUES
@@ -140,7 +156,7 @@ INSERT INTO `marcas` (`id`, `name`, `descripcion`, `status`, `add_date`, `add_up
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -155,7 +171,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nombre_usuario`, `password`, `tipo_usuario`, `empleado_id`, `status`, `fecha_registro`, `fecha_modificacion`) VALUES
@@ -193,65 +209,76 @@ INSERT INTO `usuarios` (`id`, `nombre_usuario`, `password`, `tipo_usuario`, `emp
 (32, 'germany', 'aya', 'USUARIO NORMAL', 3, 1, '0000-00-00', '0000-00-00');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `categorias`
+-- Indexes for table `cargos`
+--
+ALTER TABLE `cargos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `categorias`
 --
 ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `clientes`
+-- Indexes for table `clientes`
 --
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `empleados`
+-- Indexes for table `empleados`
 --
 ALTER TABLE `empleados`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `marcas`
+-- Indexes for table `marcas`
 --
 ALTER TABLE `marcas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `categorias`
+-- AUTO_INCREMENT for table `cargos`
+--
+ALTER TABLE `cargos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `categorias`
 --
 ALTER TABLE `categorias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
--- AUTO_INCREMENT de la tabla `clientes`
+-- AUTO_INCREMENT for table `clientes`
 --
 ALTER TABLE `clientes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT de la tabla `empleados`
+-- AUTO_INCREMENT for table `empleados`
 --
 ALTER TABLE `empleados`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de la tabla `marcas`
+-- AUTO_INCREMENT for table `marcas`
 --
 ALTER TABLE `marcas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;

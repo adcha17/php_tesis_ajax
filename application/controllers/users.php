@@ -113,9 +113,9 @@ class Users extends CI_Controller {
         $_sex = $this->input->post('nombre_usuario',TRUE);
         $_data['nombre_usuario'] = _validate_empty($_sex,'Ingrese nombre de usuario');
 
-        $_dni = $this->input->post('password',TRUE);
-        $_data['password'] = _validate_empty($_dni,'Ingrese una Contraseña');
-
+        $_password = $this->input->post('password',TRUE);
+        $_password = _validate_empty($_password,'Ingrese una Contraseña');
+        $_data['password'] = sha1($_password).;
         return array('data'=>$_data, 'cliente_id'=>$_cliente_id);
 
     }

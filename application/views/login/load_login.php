@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Brio Web App - Bootstrap Admin Template + AngularJS</title>
+	<title>Login System</title>
 
 	<meta name="description" content="">
 	<meta name="author" content="Akshay Kumar">
@@ -38,31 +38,21 @@
     <div class="container">
     	<div class="row">
     	<div class="col-lg-4 col-lg-offset-4">
-        	<h3 class="text-center">Braio</h3>
-            <p class="text-center">Sign in to get in touch</p>
+        	<h3 class="text-center">Sistema</h3>
+            <p class="text-center">Ingreso al Sistema</p>
             <hr class="clean">
         	<form role="form">
               <div class="form-group input-group">
               	<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                <input type="email" class="form-control"  placeholder="Email Adress">
+                <input id="username" name="username" type="text" class="form-control"  placeholder="Usuario">
               </div>
               <div class="form-group input-group">
               	<span class="input-group-addon"><i class="fa fa-key"></i></span>
-                <input type="text" class="form-control"  placeholder="Password">
+                <input id="password"  name="password" type="text" class="form-control"  placeholder="Password">
               </div>
-              <div class="form-group">
-                <label class="cr-styled">
-                    <input type="checkbox" ng-model="todo.done">
-                    <i class="fa"></i> 
-                </label>
-                Remember me
-              </div>
-        	  <button type="submit" class="btn btn-purple btn-block">Sign in</button>
-            </form>
-            <hr>
             
-            <p class="text-center text-gray">Dont have account yet!</p>
-            <button type="submit" class="btn btn-default btn-block">Create Account</button>
+        	  <button type="submit" class="btn btn-purple btn-block" id="btnLogin">Login</button>
+            </form>
         </div>
         </div>
     </div>
@@ -86,10 +76,10 @@
     
     <!-- Custom JQuery -->
 	<script src="<?=base_url('public')?>/assets/js/app/custom.js" type="text/javascript"></script>
+    <script src="<?php echo base_url('public/js/bootbox.js')?>"></script>
+    <script src="<?=base_url('public/js/master/login.js')?>" type="text/javascript"></script>
     
 
     
 </body>
-
-<!-- Mirrored from freakpixels.com/portfolio/brio/signin.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jul 2016 14:39:39 GMT -->
 </html>

@@ -23,7 +23,7 @@
 		   	   <div class="form-group">
 		   			<label for="">Empledos</label>
 		   			<select name="empleado_id" id="empleado_id" class="form-control">
-		   	<option value=""></option>
+		   	<option value="">--SELECCIONE--</option>
 		   				<?php
 						for($x=0; $x < count($empleados); $x++){
 						?>

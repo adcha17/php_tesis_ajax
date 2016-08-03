@@ -115,7 +115,7 @@ class Users extends CI_Controller {
 
         $_password = $this->input->post('password',TRUE);
         $_password = _validate_empty($_password,'Ingrese una Contraseña');
-        $_data['password'] = sha1($_password).;
+        $_data['password'] = sha1($_password);
         return array('data'=>$_data, 'cliente_id'=>$_cliente_id);
 
     }

@@ -28,7 +28,11 @@ class Login extends CI_Controller {
     	$_data =  $this->validate_login();
 
 
-    	$_result = $this->login_model->get_login($_data['username'],$_data['password']);
+
+    	$_result = $this->login_model->get_login($_data['username'],$_data['pass_sh1']);
+
+
+       
 
     	if ($_result)
     		_build_json(TRUE,'Bienvenido a Home');
@@ -47,7 +51,11 @@ class Login extends CI_Controller {
     	$_data['username'] = _validate_empty($_username,'ingresa tu nombre de Usuario');
 
         $_password = $this->input->post('password',TRUE);
+        
         $_data['password'] = _validate_empty($_password,'ingresa su password');
+
+       
+        $_data['pass_sh1'] = sha1($_data['password']);
 
         return $_data;
     }

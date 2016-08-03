@@ -9,6 +9,12 @@ class Clientes extends CI_Controller {
 		$this->data['controller'] = $this->controller;
 
 
+    if (!isset( $this->session->userdata['login_data']))
+        redirect('');
+    
+
+
+
 	}
 	/*
  	  FUNCION CARGAR EL FORMULARIO ADD

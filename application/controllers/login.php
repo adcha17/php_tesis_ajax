@@ -32,10 +32,20 @@ class Login extends CI_Controller {
     	$_result = $this->login_model->get_login($_data['username'],$_data['pass_sh1']);
 
 
-       
 
-    	if ($_result)
+
+    	if ($_result){
+
+                $_login_data['login_data'] = array(
+                   'username'  =>$_result->nombre_usuario,
+                   'logged_in' => TRUE
+               );
+
+                $this->session->set_userdata($_login_data);
+
+
     		_build_json(TRUE,'Bienvenido a Home');
+        }
     	else
     		_build_json(FALSE,'Usuario y/o password no validos');
 
@@ -61,6 +71,13 @@ class Login extends CI_Controller {
     }
 
    
+   public function sign_out()
+   {
+       
+       $this->session->sess_destroy();
+
+       redirect('');
+   }
  	
 
 }

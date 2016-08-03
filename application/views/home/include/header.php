@@ -83,7 +83,13 @@
         
             <div class="user text-center">
                   <img src="<?=base_url('public')?>/assets/images/avtar/user.png" class="img-circle" alt="...">
-                  <h4 class="user-name">Akshay Kumar</h4>
+                  <h4 class="user-name">
+                    <?php 
+
+                      echo  $this->session->userdata['login_data']['username'];
+
+                     ?>
+                  </h4>
                   
                   <div class="dropdown user-login">
                   <button class="btn btn-xs dropdown-toggle btn-rounded" type="button" data-toggle="dropdown" aria-expanded="true">
@@ -92,7 +98,7 @@
                   <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                     <li role="presentation"><a role="menuitem" href="#"><i class="fa fa-circle status-icon busy"></i> Busy</a></li>
                     <li role="presentation"><a role="menuitem" href="#"><i class="fa fa-circle status-icon invisibled"></i> Invisible</a></li>
-                    <li role="presentation"><a role="menuitem" href="#"><i class="fa fa-circle status-icon signout"></i> Sign out</a></li>
+                    <li role="presentation"><a role="menuitem" href="<?=base_url('login/sign_out')?>"><i class="fa fa-circle status-icon signout"></i> Sign out</a></li>
                   </ul>
                   </div>   
             </div>

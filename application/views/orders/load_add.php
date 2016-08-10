@@ -1,0 +1,67 @@
+<div class="page-header">
+    <h1>Forms <small>General forms elements</small></h1>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-right">
+            <a href="<?php echo base_url($controller . '/load_list') ?>" class="btn btn-info btn-sm">
+                <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">GENERAR FACTURA</div>
+            <div class="panel-body">
+                <form action="<?php echo base_url($controller . '/action_add') ?>" method="POST" role="form">
+                    <legend>Datos del Cliente | <?php echo $controller ?></legend>
+
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="pull-right">
+                                <a href="javascript:;" id="btn-load-modal" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Add</a>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                                <th></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                             
+                        </tbody>
+                    </table>
+
+
+
+
+                    <button type="submit" class="btn btn-primary btn-add"><span class="glyphicon glyphicon-send" aria-hidden="true"> REGISTRAR</span></button>
+                    <a href="<?php echo base_url($controller . '/load_list') ?>" class="btn btn-warning">
+                        <span class="glyphicon glyphicon-repeat" aria-hidden="true"> CANCELAR</span>
+                    </a>
+                </form> 
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="main-modal"></div>
+<script src="<?php echo base_url('public/js/orders/'.$controller.'.js') ?>"></script>
+
